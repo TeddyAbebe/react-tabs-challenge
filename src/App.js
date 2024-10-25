@@ -1,11 +1,15 @@
-import './App.css';
-import Tabs from './components/Tabs';
+import React from "react";
+import "./App.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Tabs from "./components/Tabs";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div>
-      <Tabs/>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Tabs />
+    </QueryClientProvider>
   );
 }
 
